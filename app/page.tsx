@@ -1,0 +1,21 @@
+const whatsapp = "https://wa.me/27670387417?text=Hi%20J.%20Will%20Locksmith%2C%20I%20need%20help%20with%20a%20lock%20or%20key.";
+const services = [
+  ["01", "Key Cutting", "Fast, accurate key duplication for homes, offices and everyday locks."],
+  ["02", "Car Key Coding", "Professional transponder key programming and replacement car keys."],
+  ["03", "Ignition Repair", "Diagnosis and repair for faulty, jammed or damaged vehicle ignitions."],
+  ["04", "General Locksmith", "Lock repairs, replacements, access help and practical security solutions."],
+];
+function Brand() { return <div className="brand" aria-label="J. Will Locksmith"><img src="/j-will-locksmith-logo-clean.png" alt="J. Will Locksmith – key cutting, car key coding and ignition repair" /></div>; }
+export default function Home() {
+  return <main>
+    <header className="nav wrap"><a href="#top"><Brand /></a><nav aria-label="Main navigation"><a href="#services">Services</a><a href="#contact">Contact</a></nav><a className="call-link" href="tel:+27670387417">067 038 7417</a></header>
+    <section className="hero" id="top"><div className="hero-stripe"/><div className="wrap hero-grid">
+      <div className="hero-copy"><p className="eyebrow"><span/> Cosmo City’s local locksmith</p><h1>Locked out?<br/><em>We’ll sort it.</em></h1><p className="lead">Reliable locksmith and automotive key services, right here in Randburg. Clear advice, skilled work and help when you need it.</p><div className="hero-actions"><a className="btn btn-whatsapp" href={whatsapp} target="_blank" rel="noreferrer"><span className="wa-icon">✆</span> WhatsApp now</a><a className="btn btn-outline" href="tel:+27670387417">Call 067 038 7417</a></div><div className="trust-row"><span>✓ Local service</span><span>✓ Auto specialists</span><span>✓ Practical solutions</span></div></div>
+      <div className="hero-visual"><div className="logo-showcase"><img src="/j-will-locksmith-logo-clean.png" alt="J. Will Locksmith logo featuring house keys, car keys and a padlock" /></div><div className="red-stamp">LOCAL<br/>&amp; READY</div></div>
+    </div></section>
+    <section className="services wrap" id="services"><div className="section-head"><div><p className="eyebrow"><span/> What we do</p><h2>One call. <em>Four solutions.</em></h2></div><p>From a spare house key to a vehicle that won’t start, J. Will Locksmith brings focused, professional help.</p></div><div className="service-grid">{services.map((s,i)=><article className="service-card" key={s[0]}><span className="service-num">{s[0]}</span><div className="service-symbol">{["⌁","▣","◉","⌂"][i]}</div><h3>{s[1]}</h3><p>{s[2]}</p><a href={whatsapp} target="_blank" rel="noreferrer">Ask about this <b>→</b></a></article>)}</div></section>
+    <section className="cta-band"><div className="wrap cta-inner"><div><p className="eyebrow light"><span/> Need a locksmith?</p><h2>Let’s get you moving again.</h2></div><a className="btn btn-yellow" href={whatsapp} target="_blank" rel="noreferrer">Message us on WhatsApp <b>→</b></a></div></section>
+    <section className="contact wrap" id="contact"><div className="contact-copy"><p className="eyebrow"><span/> Find us</p><h2>Your locksmith in <em>Cosmo City.</em></h2><p>Visit us or get in touch first. Send a photo of the key, lock or ignition on WhatsApp to help us understand what you need.</p><div className="contact-details"><a href="https://maps.google.com/?q=71+Bangui+Cres,+Cosmo+City,+Randburg,+2087" target="_blank" rel="noreferrer"><span>⌖</span><div><small>ADDRESS</small><b>71 Bangui Cres, Cosmo City<br/>Randburg, 2087</b></div></a><a href="tel:+27670387417"><span>☎</span><div><small>PHONE &amp; WHATSAPP</small><b>067 038 7417</b></div></a></div></div><div className="contact-panel"><Brand/><p>Keys cut. Cars coded.<br/>Locks handled.</p><a className="btn btn-whatsapp" href={whatsapp} target="_blank" rel="noreferrer">Start a WhatsApp chat</a><small>J. WILL LOCKSMITH • COSMO CITY</small></div></section>
+    <footer><div className="wrap"><Brand/><p>© 2026 J. Will Locksmith. All rights reserved.</p><a href="#top">Back to top ↑</a></div></footer><a className="float-wa" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Chat with J. Will Locksmith on WhatsApp">✆</a>
+  </main>;
+}
